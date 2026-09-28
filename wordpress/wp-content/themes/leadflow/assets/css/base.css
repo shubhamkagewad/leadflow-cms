@@ -345,6 +345,179 @@ img {
     color: #6b7280;
     line-height: 1.7;
 }
+/* ========================================
+   CTA Section
+======================================== */
+
+.cta-section {
+    padding: 100px 0;
+    background: #111827;
+}
+
+.cta-section__content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-section__eyebrow {
+    margin: 0 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d1d5db;
+}
+
+.cta-section__title {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.cta-section__description {
+    max-width: 620px;
+    margin: 20px auto 0;
+    color: #d1d5db;
+    line-height: 1.7;
+}
+
+.cta-section .button {
+    margin-top: 30px;
+}
+
+.cta-section .button--primary {
+    background: #ffffff;
+    color: #111827;
+}
+/* ========================================
+   Page Hero
+======================================== */
+
+.page-hero {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.page-hero__eyebrow {
+    margin: 0 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-hero__title {
+    max-width: 800px;
+    margin: 0;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.1;
+}
+
+.page-hero__description {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   Contact Section
+======================================== */
+
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-section__inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.contact-content h2 {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+.contact-content p:last-child {
+    margin-top: 20px;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   Lead Form
+======================================== */
+
+.contact-form-wrapper {
+    padding: 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font: inherit;
+    background: #ffffff;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: 2px solid #111827;
+    outline-offset: 1px;
+}
+
+.form-error {
+    min-height: 18px;
+    margin: 0;
+    font-size: 13px;
+    color: #b91c1c;
+}
+
+.lead-form__submit {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.lead-form__status {
+    min-height: 24px;
+    font-size: 14px;
+}
+
+
 @media (max-width: 768px) {
 
     .hero-section {
@@ -372,7 +545,7 @@ img {
         width: 100%;
     }
 
-        .services-section {
+    .services-section {
         padding: 70px 0;
     }
 
@@ -384,7 +557,7 @@ img {
         padding: 26px;
     }
 
-        .why-section {
+    .why-section {
         padding: 70px 0;
     }
 
@@ -395,4 +568,32 @@ img {
     .why-card {
         padding: 26px;
     }
+    .cta-section {
+        padding: 70px 0;
+    }
+
+    .cta-section__title {
+        font-size: 36px;
+    }
+        .page-hero {
+        padding: 60px 0;
+    }
+
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .contact-section__inner {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contact-content h2 {
+        font-size: 34px;
+    }
+
+    .contact-form-wrapper {
+        padding: 24px;
+    }
 }
+

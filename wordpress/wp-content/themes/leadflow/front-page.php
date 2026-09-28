@@ -214,6 +214,38 @@ get_header();
         </div>
 
     </section>
+        <!-- CTA Section -->
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-section__content">
+
+                <p class="cta-section__eyebrow">
+                    Ready to Grow?
+                </p>
+
+                <h2 class="cta-section__title">
+                    Turn More Website Visitors Into Leads
+                </h2>
+
+                <p class="cta-section__description">
+                    Build a faster, SEO-friendly website designed to
+                    support your marketing and lead-generation goals.
+                </p>
+
+                <a
+                    class="button button--primary"
+                    href="<?php echo esc_url(home_url('/contact/')); ?>"
+                >
+                    Start a Conversation
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 </main>
 
 <?php
