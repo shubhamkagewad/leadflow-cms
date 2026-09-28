@@ -4,7 +4,7 @@ A performance-focused lead generation website built with a custom WordPress them
 
 ## Overview
 
-LeadFlow CMS is a portfolio project that demonstrates the development and maintenance of a modern marketing website using WordPress, HTML, CSS, JavaScript, Node.js, and TypeScript.
+LeadFlow CMS is a project that demonstrates the development and maintenance of a modern marketing website using WordPress, HTML, CSS, JavaScript, Node.js, and TypeScript.
 
 The project combines WordPress content management with a lightweight API layer for lead processing, newsletter subscriptions, and external service integrations.
 
