@@ -103,3 +103,57 @@ img {
     font-size: 14px;
     color: #6b7280;
 }   
+/* ========================================
+   Mobile Navigation
+======================================== */
+
+@media (max-width: 768px) {
+
+    .site-header__inner {
+        min-height: 64px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: #ffffff;
+        border-top: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .site-navigation.is-open {
+        display: flex;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .site-navigation li {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .site-navigation li a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .header-cta {
+        display: block;
+        text-align: center;
+    }
+}

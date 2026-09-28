@@ -23,3 +23,16 @@ function leadflow_enqueue_assets() {
 }
 
 add_action('wp_enqueue_scripts', 'leadflow_enqueue_assets');
+
+function leadflow_enqueue_scripts() {
+
+    wp_enqueue_script(
+        'leadflow-main',
+        get_template_directory_uri() . '/assets/js/main.js',
+        [],
+        '1.0',
+        true
+    );
+}
+
+add_action('wp_enqueue_scripts', 'leadflow_enqueue_scripts');
