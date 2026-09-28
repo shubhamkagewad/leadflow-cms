@@ -4,9 +4,12 @@ import {
 } from 'express';
 
 import {
-    NewsletterData,
     subscribeToNewsletter
 } from '../services/mailService.js';
+
+import {
+    NewsletterData
+} from '../services/mailProvider.js';
 
 
 export function subscribeNewsletter(

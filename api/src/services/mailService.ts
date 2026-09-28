@@ -1,33 +1,38 @@
-export interface NewsletterData {
-    email: string;
+import {
+    MailProvider,
+    NewsletterData,
+    NewsletterResponse
+} from './mailProvider.js';
+
+class MockMailProvider implements MailProvider {
+
+    subscribe(
+        data: NewsletterData
+    ): NewsletterResponse {
+
+        console.log(
+            'Subscribing email to mock Mailchimp:',
+            data.email
+        );
+
+        const externalId =
+            `subscriber-${Date.now()}`;
+
+        return {
+            success: true,
+            provider: 'mock-mailchimp',
+            externalId
+        };
+    }
 }
 
-
-export interface NewsletterResponse {
-    success: boolean;
-    provider: string;
-    externalId: string;
-}
-
+const mailProvider =
+    new MockMailProvider();
 
 export function subscribeToNewsletter(
     data: NewsletterData
 ): NewsletterResponse {
 
-    console.log(
-        'Subscribing email to newsletter:',
-        data.email
-    );
-
-
-    const externalId =
-        `subscriber-${Date.now()}`;
-
-
-    return {
-        success: true,
-        provider: 'mock-mailchimp',
-        externalId
-    };
+    return mailProvider.subscribe(data);
 
 }
