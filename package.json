@@ -7,8 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "audit": "bash scripts/audit.sh"
-  },
+    "audit": "bash scripts/audit.sh",
+    "performance": "bash scripts/performance-check.sh"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shubhamkagewad/leadflow-cms.git"
