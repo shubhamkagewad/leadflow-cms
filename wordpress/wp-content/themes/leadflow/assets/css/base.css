@@ -225,6 +225,82 @@ img {
     border: 1px solid #d1d5db;
     background: #ffffff;
 }
+
+/* ========================================
+   Section Heading
+======================================== */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-heading__eyebrow {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-heading__title {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+}
+
+.section-heading__description {
+    margin: 18px 0 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   Services Section
+======================================== */
+
+.services-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.service-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    font-weight: 700;
+}
+
+.service-card__title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.service-card__description {
+    margin: 14px 0 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
 @media (max-width: 768px) {
 
     .hero-section {
@@ -250,5 +326,17 @@ img {
 
     .button {
         width: 100%;
+    }
+
+        .services-section {
+        padding: 70px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 26px;
     }
 }
