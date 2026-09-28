@@ -39,3 +39,11 @@ jobs:
 
       - name: Run tests
         run: npm run test:run
+
+      - name: Run project audit
+        working-directory: .
+        run: npm run audit
+
+      - name: Run performance check
+        working-directory: .
+        run: npm run performance
