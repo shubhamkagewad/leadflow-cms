@@ -1,36 +1,17 @@
-import express from 'express';
-import cors from 'cors';
+import 'dotenv/config';
 
-import leadRoutes from './routes/leadRoutes.js';
-import newsletterRoutes from './routes/newsletterRoutes.js';
+import app from './app.js';
 
-const app = express();
+const PORT =
+    Number(process.env.PORT) || 3000;
 
-const PORT = 3000;
+app.listen(
+    PORT,
+    () => {
 
+        console.log(
+            `LeadFlow API running at http://localhost:${PORT}`
+        );
 
-app.use(cors());
-app.use(express.json());
-
-
-app.get('/api/health', (_req, res) => {
-
-    res.json({
-        success: true,
-        message: 'LeadFlow API is running'
-    });
-
-});
-
-
-app.use('/api', leadRoutes);
-app.use('/api', newsletterRoutes);
-
-
-app.listen(PORT, () => {
-
-    console.log(
-        `LeadFlow API running at http://localhost:${PORT}`
-    );
-
-});
+    }
+);

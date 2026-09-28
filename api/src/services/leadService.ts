@@ -8,6 +8,9 @@ export interface LeadData {
     email: string;
     company?: string;
     message: string;
+    utm_source?: string;
+utm_medium?: string;
+utm_campaign?: string;
 }
 
 

@@ -1,16 +1,39 @@
-<? php
-// Silence is golden.
+<?php
 
 get_header();
 
 ?>
 
 <main>
-    <h1>Welcome to LeadFlow</h1>
 
-    <p>
-        This is our custom WordPress theme.
-    </p>
+    <?php if (have_posts()) : ?>
+
+        <?php while (have_posts()) : ?>
+
+            <?php the_post(); ?>
+
+            <article class="container">
+
+                <h1>
+                    <?php the_title(); ?>
+                </h1>
+
+                <div>
+                    <?php the_content(); ?>
+                </div>
+
+            </article>
+
+        <?php endwhile; ?>
+
+    <?php else : ?>
+
+        <p class="container">
+            No content found.
+        </p>
+
+    <?php endif; ?>
+
 </main>
 
 <?php

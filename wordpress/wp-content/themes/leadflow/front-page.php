@@ -32,7 +32,7 @@ get_header();
                     <a
                         class="button button--primary"
                         href="<?php echo esc_url(home_url('/contact/')); ?>"
-                    >
+                    data-track="primary_cta">
                         Get Started
                     </a>
 
@@ -74,58 +74,59 @@ get_header();
 
         <div class="services-grid">
 
-            <article class="service-card">
+            <?php
 
-                <div class="service-card__icon">
-                    01
-                </div>
+$services_query = new WP_Query([
+    'post_type'      => 'service',
+    'posts_per_page' => 3,
+    'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'ASC'
+]);
 
-                <h3 class="service-card__title">
-                    Website Development
-                </h3>
+if ($services_query->have_posts()) :
 
-                <p class="service-card__description">
-                    Build responsive, fast and user-friendly websites
-                    designed for modern businesses.
-                </p>
+    while ($services_query->have_posts()) :
 
-            </article>
+        $services_query->the_post();
 
+        ?>
 
-            <article class="service-card">
+        <article class="service-card">
 
-                <div class="service-card__icon">
-                    02
-                </div>
+            <div class="service-card__content">
 
                 <h3 class="service-card__title">
-                    SEO Optimization
+                    <?php the_title(); ?>
                 </h3>
 
-                <p class="service-card__description">
-                    Improve technical and on-page SEO to help your
-                    website become easier to discover.
-                </p>
+                <div class="service-card__description">
 
-            </article>
+                    <?php the_content(); ?>
 
-
-            <article class="service-card">
-
-                <div class="service-card__icon">
-                    03
                 </div>
 
-                <h3 class="service-card__title">
-                    Lead Generation
-                </h3>
+            </div>
 
-                <p class="service-card__description">
-                    Create conversion-focused experiences that turn
-                    website visitors into potential customers.
-                </p>
+        </article>
 
-            </article>
+        <?php
+
+    endwhile;
+
+    wp_reset_postdata();
+
+else :
+
+    ?>
+
+    <p>
+        Services will be available soon.
+    </p>
+
+    <?php
+
+endif; ?>
 
         </div>
 
@@ -296,7 +297,11 @@ get_header();
 
                 </div>
 
+<input type="hidden" name="utm_source" id="utm_source">
 
+<input type="hidden" name="utm_medium" id="utm_medium">
+
+<input type="hidden" name="utm_campaign" id="utm_campaign">
                 <button
                     type="submit"
                     class="button button--primary newsletter-form__submit"

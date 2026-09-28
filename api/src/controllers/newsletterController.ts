@@ -2,7 +2,10 @@ import {
     Request,
     Response
 } from 'express';
-
+import {
+    isNonEmptyString,
+    isValidEmail
+} from '../utils/validation.js';
 import {
     subscribeToNewsletter
 } from '../services/mailService.js';
@@ -22,18 +25,32 @@ export function subscribeNewsletter(
     } = req.body;
 
 
-    if (!email) {
+    if (!isNonEmptyString(email)) {
 
-        return res.status(400).json({
+    return res.status(400).json({
 
-            success: false,
+        success: false,
 
-            message:
-                'Email is required.'
+        message:
+            'Email is required.'
 
-        });
+    });
 
-    }
+}
+
+
+if (!isValidEmail(email.trim())) {
+
+    return res.status(400).json({
+
+        success: false,
+
+        message:
+            'Please provide a valid email address.'
+
+    });
+
+}
 
 
     const newsletterData: NewsletterData = {

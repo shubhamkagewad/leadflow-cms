@@ -1,5 +1,8 @@
 import { Request, Response } from 'express';
-
+import {
+    isNonEmptyString,
+    isValidEmail
+} from '../utils/validation.js';
 import {
     LeadData,
     processLead
@@ -15,22 +18,43 @@ export function createLead(
         name,
         email,
         company,
-        message
+        message,
+        utm_source,
+    utm_medium,
+    utm_campaign
     } = req.body;
 
 
-    if (!name || !email || !message) {
+    if (
+    !isNonEmptyString(name) ||
+    !isNonEmptyString(email) ||
+    !isNonEmptyString(message)
+) {
 
-        return res.status(400).json({
+    return res.status(400).json({
 
-            success: false,
+        success: false,
 
-            message:
-                'Name, email and message are required.'
+        message:
+            'Name, email and message are required.'
 
-        });
+    });
 
-    }
+}
+
+
+if (!isValidEmail(email.trim())) {
+
+    return res.status(400).json({
+
+        success: false,
+
+        message:
+            'Please provide a valid email address.'
+
+    });
+
+}
 
 
     const lead: LeadData = {
@@ -43,8 +67,21 @@ export function createLead(
             ? company.trim()
             : undefined,
 
-        message: message.trim()
+        message: message.trim(),
+utm_source:
+        typeof utm_source === 'string'
+            ? utm_source.trim()
+            : undefined,
 
+    utm_medium:
+        typeof utm_medium === 'string'
+            ? utm_medium.trim()
+            : undefined,
+
+    utm_campaign:
+        typeof utm_campaign === 'string'
+            ? utm_campaign.trim()
+            : undefined
     };
 
 

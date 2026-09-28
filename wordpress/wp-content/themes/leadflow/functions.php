@@ -30,15 +30,26 @@ add_action('wp_enqueue_scripts', 'leadflow_enqueue_assets');
 function leadflow_enqueue_scripts() {
 
     wp_enqueue_script(
-    'leadflow-main',
-    get_template_directory_uri() . '/assets/js/main.js',
-    [],
-    LEADFLOW_VERSION,
-    true
-);
+        'leadflow-main',
+        get_template_directory_uri() . '/assets/js/main.js',
+        [],
+        LEADFLOW_VERSION,
+        true
+    );
+
+    wp_localize_script(
+        'leadflow-main',
+        'leadflowConfig',
+        [
+            'apiUrl' => 'http://localhost:3000'
+        ]
+    );
 }
 
-add_action('wp_enqueue_scripts', 'leadflow_enqueue_scripts');
+add_action(
+    'wp_enqueue_scripts',
+    'leadflow_enqueue_scripts'
+);
 
 function leadflow_add_meta_description() {
 
@@ -200,4 +211,43 @@ function leadflow_add_schema_markup() {
 add_action(
     'wp_head',
     'leadflow_add_schema_markup'
+);
+
+function leadflow_register_service_post_type() {
+
+    register_post_type(
+        'service',
+        [
+            'labels' => [
+                'name'          => 'Services',
+                'singular_name' => 'Service',
+                'add_new_item'  => 'Add New Service',
+                'edit_item'     => 'Edit Service'
+            ],
+
+            'public' => true,
+
+            'menu_icon' => 'dashicons-admin-tools',
+
+            'supports' => [
+                'title',
+                'editor',
+                'thumbnail'
+            ],
+
+            'has_archive' => true,
+
+            'rewrite' => [
+                'slug' => 'services'
+            ],
+
+            'show_in_rest' => true
+        ]
+    );
+
+}
+
+add_action(
+    'init',
+    'leadflow_register_service_post_type'
 );
