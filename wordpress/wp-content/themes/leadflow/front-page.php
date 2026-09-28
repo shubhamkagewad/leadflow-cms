@@ -6,22 +6,46 @@ get_header();
 
 <main>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero-section">
 
-        <div class="container">
+        <div class="container hero-section__inner">
 
-            <h1>
-                LeadFlow Marketing Platform
-            </h1>
+            <div class="hero-section__content">
 
-            <p>
-                LeadFlow helps businesses generate leads through
-                fast, SEO-friendly and conversion-focused websites.
-            </p>
+                <p class="hero-section__eyebrow">
+                    Digital Growth Platform
+                </p>
 
-            <a href="<?php echo esc_url(home_url('/contact/')); ?>">
-                Get Started
-            </a>
+                <h1 class="hero-section__title">
+                    Build Faster Websites.
+                    Generate More Leads.
+                </h1>
+
+                <p class="hero-section__description">
+                    LeadFlow helps businesses create fast, SEO-friendly
+                    websites that turn visitors into qualified leads.
+                </p>
+
+                <div class="hero-section__actions">
+
+                    <a
+                        class="button button--primary"
+                        href="<?php echo esc_url(home_url('/contact/')); ?>"
+                    >
+                        Get Started
+                    </a>
+
+                    <a
+                        class="button button--secondary"
+                        href="<?php echo esc_url(home_url('/services/')); ?>"
+                    >
+                        Explore Services
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
