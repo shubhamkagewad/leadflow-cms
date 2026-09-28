@@ -1,8 +1,12 @@
 import express from 'express';
 
+import leadRoutes from './routes/leadRoutes.js';
+
+
 const app = express();
 
 const PORT = 3000;
+
 
 app.use(express.json());
 
@@ -15,6 +19,9 @@ app.get('/api/health', (_req, res) => {
     });
 
 });
+
+
+app.use('/api', leadRoutes);
 
 
 app.listen(PORT, () => {
