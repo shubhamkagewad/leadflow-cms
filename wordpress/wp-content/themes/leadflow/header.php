@@ -13,21 +13,44 @@
 
 <body <?php body_class(); ?>>
 
-<header>
+<?php wp_body_open(); ?>
 
-    <div class="container">
+<header class="site-header">
 
-        <a href="<?php echo esc_url(home_url('/')); ?>">
+    <div class="container site-header__inner">
+
+        <a
+            class="site-logo"
+            href="<?php echo esc_url(home_url('/')); ?>"
+        >
             LeadFlow
         </a>
 
-        <nav>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="site-navigation">
 
             <?php
             wp_nav_menu([
-                'theme_location' => 'primary'
+                'theme_location' => 'primary',
+                'container'      => false,
+                'fallback_cb'    => false
             ]);
             ?>
+
+            <a
+                class="header-cta"
+                href="<?php echo esc_url(home_url('/contact/')); ?>"
+            >
+                Get Started
+            </a>
 
         </nav>
 
