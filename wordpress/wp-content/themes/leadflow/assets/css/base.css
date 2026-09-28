@@ -300,6 +300,50 @@ img {
     margin: 14px 0 0;
     color: #6b7280;
     line-height: 1.7;
+}   
+/* ========================================
+   Why LeadFlow Section
+======================================== */
+
+.why-section {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.why-card {
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.why-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    font-weight: 700;
+}
+
+.why-card__title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.why-card__description {
+    margin: 14px 0 0;
+    color: #6b7280;
+    line-height: 1.7;
 }
 @media (max-width: 768px) {
 
@@ -337,6 +381,18 @@ img {
     }
 
     .service-card {
+        padding: 26px;
+    }
+
+        .why-section {
+        padding: 70px 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card {
         padding: 26px;
     }
 }

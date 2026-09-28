@@ -132,6 +132,88 @@ get_header();
     </div>
 
 </section>
+    <!-- Why LeadFlow Section -->
+    <section class="why-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-heading__eyebrow">
+                    Why LeadFlow
+                </p>
+
+                <h2 class="section-heading__title">
+                    Built for Performance and Growth
+                </h2>
+
+                <p class="section-heading__description">
+                    LeadFlow combines modern web development practices
+                    with SEO and performance optimization.
+                </p>
+
+            </div>
+
+            <div class="why-grid">
+
+                <article class="why-card">
+
+                    <div class="why-card__icon">
+                        01
+                    </div>
+
+                    <h3 class="why-card__title">
+                        Fast Performance
+                    </h3>
+
+                    <p class="why-card__description">
+                        Lightweight HTML, CSS and JavaScript help create
+                        fast-loading experiences across devices.
+                    </p>
+
+                </article>
+
+
+                <article class="why-card">
+
+                    <div class="why-card__icon">
+                        02
+                    </div>
+
+                    <h3 class="why-card__title">
+                        SEO Ready
+                    </h3>
+
+                    <p class="why-card__description">
+                        Semantic HTML, clean structure and technical SEO
+                        practices help search engines understand the website.
+                    </p>
+
+                </article>
+
+
+                <article class="why-card">
+
+                    <div class="why-card__icon">
+                        03
+                    </div>
+
+                    <h3 class="why-card__title">
+                        Mobile First
+                    </h3>
+
+                    <p class="why-card__description">
+                        Responsive layouts ensure the website works smoothly
+                        across mobile, tablet and desktop devices.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
 </main>
 
 <?php
