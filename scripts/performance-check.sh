@@ -120,8 +120,101 @@ else
     echo "✓ No console.log statements found."
 
 fi
+echo ""
+echo "Checking image formats..."
+echo ""
+
+UNOPTIMIZED_IMAGES=0
+
+for file in \
+    wordpress/wp-content/themes/leadflow/assets/images/*
+do
+    if [ -f "$file" ]; then
+
+        case "$file" in
+
+            *.jpg|*.jpeg|*.png|*.gif)
+
+                echo "⚠ Consider converting to WebP or AVIF: $file"
+
+                UNOPTIMIZED_IMAGES=$((UNOPTIMIZED_IMAGES + 1))
+
+                ;;
+
+            *.webp|*.avif)
+
+                echo "✓ Optimized image format: $file"
+
+                ;;
+
+            *)
+
+                echo "✓ Image format checked: $file"
+
+                ;;
+
+        esac
+
+    fi
+done
+
+if [ "$UNOPTIMIZED_IMAGES" -eq 0 ]; then
+    echo "✓ No JPG, JPEG, PNG or GIF images found."
+fi
+echo ""
+echo "Checking accessibility basics..."
+echo ""
+
+THEME_DIR="wordpress/wp-content/themes/leadflow"
+
+echo "Checking image alt attributes..."
+
+if grep -R '<img' "$THEME_DIR" \
+    --include="*.php" \
+    --include="*.html" \
+    | grep -v 'alt=' >/dev/null 2>&1; then
+
+    echo "⚠ Images without alt attributes may exist."
+
+else
+
+    echo "✓ No images missing alt attributes detected."
+
+fi
 
 
+echo ""
+echo "Checking form labels..."
+
+FORM_COUNT=$(grep -R '<form' "$THEME_DIR" \
+    --include="*.php" \
+    --include="*.html" \
+    | wc -l)
+
+LABEL_COUNT=$(grep -R '<label' "$THEME_DIR" \
+    --include="*.php" \
+    --include="*.html" \
+    | wc -l)
+
+echo "  Forms found: $FORM_COUNT"
+echo "  Labels found: $LABEL_COUNT"
+
+
+echo ""
+echo "Checking viewport meta tag..."
+
+if grep -R 'name="viewport"' "$THEME_DIR" \
+    --include="*.php" \
+    --include="*.html" \
+    >/dev/null 2>&1; then
+
+    echo "✓ Viewport meta tag found."
+
+else
+
+    echo "⚠ Viewport meta tag not found."
+
+fi
 echo ""
 
 echo "======================================"
