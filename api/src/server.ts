@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import leadRoutes from './routes/leadRoutes.js';
-
+import newsletterRoutes from './routes/newsletterRoutes.js';
 
 const app = express();
 
@@ -24,6 +24,7 @@ app.get('/api/health', (_req, res) => {
 
 
 app.use('/api', leadRoutes);
+app.use('/api', newsletterRoutes);
 
 
 app.listen(PORT, () => {

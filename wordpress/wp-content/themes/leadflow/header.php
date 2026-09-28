@@ -27,15 +27,20 @@
         </a>
 
         <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-        >
-            ☰
-        </button>
+    class="menu-toggle"
+    type="button"
+    aria-label="Toggle navigation"
+    aria-expanded="false"
+    aria-controls="primary-navigation"
+>
+    ☰
+</button>
 
-        <nav class="site-navigation">
+        <nav
+    id="primary-navigation"
+    class="site-navigation"
+    aria-label="Primary navigation"
+>
 
             <?php
             wp_nav_menu([

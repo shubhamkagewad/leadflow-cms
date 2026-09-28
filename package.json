@@ -1,0 +1,24 @@
+{
+  "name": "leadflow-cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "audit": "bash scripts/audit.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamkagewad/leadflow-cms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shubhamkagewad/leadflow-cms/issues"
+  },
+  "homepage": "https://github.com/shubhamkagewad/leadflow-cms#readme"
+}

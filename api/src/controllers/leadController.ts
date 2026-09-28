@@ -1,6 +1,15 @@
 import { Request, Response } from 'express';
 
-export function createLead(req: Request, res: Response) {
+import {
+    LeadData,
+    processLead
+} from '../services/leadService.js';
+
+
+export function createLead(
+    req: Request,
+    res: Response
+) {
 
     const {
         name,
@@ -13,24 +22,44 @@ export function createLead(req: Request, res: Response) {
     if (!name || !email || !message) {
 
         return res.status(400).json({
+
             success: false,
-            message: 'Name, email and message are required.'
+
+            message:
+                'Name, email and message are required.'
+
         });
 
     }
 
 
-    console.log('New lead received:', {
-        name,
-        email,
-        company,
-        message
-    });
+    const lead: LeadData = {
+
+        name: name.trim(),
+
+        email: email.trim(),
+
+        company: company
+            ? company.trim()
+            : undefined,
+
+        message: message.trim()
+
+    };
+
+
+    const processedLead =
+        processLead(lead);
 
 
     return res.status(201).json({
+
         success: true,
-        message: 'Lead received successfully.'
+
+        message: 'Lead received successfully.',
+
+        data: processedLead
+
     });
 
 }

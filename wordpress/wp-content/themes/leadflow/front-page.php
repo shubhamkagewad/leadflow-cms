@@ -247,7 +247,77 @@ get_header();
 
     </section>
 </main>
+<section class="newsletter-section">
 
+    <div class="container newsletter-section__inner">
+
+        <div class="newsletter-content">
+
+            <p class="section-heading__eyebrow">
+                Stay Updated
+            </p>
+
+            <h2>
+                Get Web Development & Marketing Insights
+            </h2>
+
+            <p>
+                Subscribe to receive useful insights about web development,
+                SEO, performance and lead generation.
+            </p>
+
+        </div>
+
+
+        <div class="newsletter-form-wrapper">
+
+            <form
+                id="newsletter-form"
+                class="newsletter-form"
+                novalidate
+            >
+
+                <div class="newsletter-form__field">
+
+                    <label
+                        for="newsletter-email"
+                    >
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="newsletter-email"
+                        name="email"
+                        autocomplete="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="button button--primary newsletter-form__submit"
+                >
+                    Subscribe
+                </button>
+
+            </form>
+
+
+            <p
+                id="newsletter-status"
+                class="newsletter-form__status"
+                aria-live="polite"
+            ></p>
+
+        </div>
+
+    </div>
+
+</section>
 <?php
 
 get_footer();
